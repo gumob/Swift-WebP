@@ -15,12 +15,16 @@ Support Versions:
 
 * libwebp: v1.0.0
 * iOS Deployment Target: 8.0
+* tvOS Deployment Target: 10.0
+* watchOS Deployment Target: 3.0
 * macOS Deployment Target: 10.11
 
 #### Features.
 
 * [x] support macOS build
 * [x] support iOS build
+* [x] support tvOS build
+* [x] support watchOS build
 * [x] [Advanced Encoder API](https://developers.google.com/speed/webp/docs/api#advanced_encoding_api): WebPEncoder, WebPEncoderConfig
 * [x] [Simple Decoding API](https://developers.google.com/speed/webp/docs/api#simple_decoding_api): WebPSimple#decode(...) <= will remove
 
