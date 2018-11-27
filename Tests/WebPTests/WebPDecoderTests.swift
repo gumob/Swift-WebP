@@ -58,6 +58,7 @@ class WebPDecoderTests: XCTestCase {
         XCTAssertEqual(size.1, 907)
     }
     
+    /* TODO: Add a test case for VP8X */
 //    func testVP8X() {
 //        let url = Bundle(for: self.classForCoder).url(forResource: "jiro-vp8x", withExtension: "webp")!
 //        let data = try! Data(contentsOf: url)
