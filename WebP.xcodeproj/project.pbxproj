@@ -629,20 +629,20 @@
 			isa = PBXGroup;
 			children = (
 				BDCC9B3F1E42407700D914B4 /* alpha_dec.c */,
-				BDCC9B401E42407700D914B4 /* alphai_dec.h */,
 				BDCC9B411E42407700D914B4 /* buffer_dec.c */,
-				BDCC9B421E42407700D914B4 /* common_dec.h */,
 				BDCC9B431E42407700D914B4 /* frame_dec.c */,
 				BDCC9B441E42407700D914B4 /* idec_dec.c */,
 				BDCC9B451E42407700D914B4 /* io_dec.c */,
 				BDCC9B471E42407700D914B4 /* quant_dec.c */,
 				BDCC9B481E42407700D914B4 /* tree_dec.c */,
 				BDCC9B491E42407700D914B4 /* vp8_dec.c */,
+				BDCC9B4C1E42407700D914B4 /* vp8l_dec.c */,
+				BDCC9B4E1E42407700D914B4 /* webp_dec.c */,
+				BDCC9B401E42407700D914B4 /* alphai_dec.h */,
+				BDCC9B421E42407700D914B4 /* common_dec.h */,
 				BDCC9B4A1E42407700D914B4 /* vp8_dec.h */,
 				BDCC9B4B1E42407700D914B4 /* vp8i_dec.h */,
-				BDCC9B4C1E42407700D914B4 /* vp8l_dec.c */,
 				BDCC9B4D1E42407700D914B4 /* vp8li_dec.h */,
-				BDCC9B4E1E42407700D914B4 /* webp_dec.c */,
 				BDCC9B4F1E42407700D914B4 /* webpi_dec.h */,
 			);
 			path = dec;
@@ -660,15 +660,11 @@
 		BDCC9B561E42407700D914B4 /* dsp */ = {
 			isa = PBXGroup;
 			children = (
-				FD027E4920A8F859004634B2 /* common_sse41.h */,
-				FD027E4B20A8F859004634B2 /* upsampling_sse41.c */,
-				FD027E4A20A8F859004634B2 /* yuv_sse41.c */,
 				BDCC9B581E42407700D914B4 /* alpha_processing_mips_dsp_r2.c */,
 				BDCC9B591E42407700D914B4 /* alpha_processing_neon.c */,
 				BDCC9B5A1E42407700D914B4 /* alpha_processing_sse2.c */,
 				BDCC9B5B1E42407700D914B4 /* alpha_processing_sse41.c */,
 				BDCC9B571E42407700D914B4 /* alpha_processing.c */,
-				BDCC9B5F1E42407700D914B4 /* common_sse2.h */,
 				BDCC9B621E42407700D914B4 /* cost_mips_dsp_r2.c */,
 				BDCC9B611E42407700D914B4 /* cost_mips32.c */,
 				BDCC9B631E42407700D914B4 /* cost_sse2.c */,
@@ -682,7 +678,6 @@
 				BDCC9B6B1E42407700D914B4 /* dec_sse2.c */,
 				BDCC9B6C1E42407700D914B4 /* dec_sse41.c */,
 				BDCC9B651E42407700D914B4 /* dec.c */,
-				BDCC9B6D1E42407700D914B4 /* dsp.h */,
 				BDCC9B6F1E42407700D914B4 /* enc_avx2.c */,
 				BDCC9B711E42407700D914B4 /* enc_mips_dsp_r2.c */,
 				BDCC9B701E42407700D914B4 /* enc_mips32.c */,
@@ -696,7 +691,6 @@
 				BDCC9B791E42407700D914B4 /* filters_neon.c */,
 				BDCC9B7A1E42407700D914B4 /* filters_sse2.c */,
 				BDCC9B761E42407700D914B4 /* filters.c */,
-				BDCC9B7D1E42407700D914B4 /* lossless_common.h */,
 				BDCC9B801E42407700D914B4 /* lossless_enc_mips_dsp_r2.c */,
 				BDCC9B7F1E42407700D914B4 /* lossless_enc_mips32.c */,
 				BDCC9B811E42407700D914B4 /* lossless_enc_msa.c */,
@@ -709,10 +703,6 @@
 				BDCC9B871E42407700D914B4 /* lossless_neon.c */,
 				BDCC9B881E42407700D914B4 /* lossless_sse2.c */,
 				BDCC9B7B1E42407700D914B4 /* lossless.c */,
-				BDCC9B7C1E42407700D914B4 /* lossless.h */,
-				BDCC9B8A1E42407700D914B4 /* mips_macro.h */,
-				BDCC9B8B1E42407700D914B4 /* msa_macro.h */,
-				BDCC9B8C1E42407700D914B4 /* neon.h */,
 				BDCC9B8F1E42407800D914B4 /* rescaler_mips_dsp_r2.c */,
 				BDCC9B8E1E42407800D914B4 /* rescaler_mips32.c */,
 				BDCC9B901E42407800D914B4 /* rescaler_msa.c */,
@@ -725,12 +715,22 @@
 				BDCC9B951E42407800D914B4 /* upsampling_msa.c */,
 				BDCC9B961E42407800D914B4 /* upsampling_neon.c */,
 				BDCC9B971E42407800D914B4 /* upsampling_sse2.c */,
+				FD027E4B20A8F859004634B2 /* upsampling_sse41.c */,
 				BDCC9B931E42407800D914B4 /* upsampling.c */,
 				BDCC9B9B1E42407800D914B4 /* yuv_mips_dsp_r2.c */,
 				BDCC9B9A1E42407800D914B4 /* yuv_mips32.c */,
 				FD7547EF201E5A4300A3D93D /* yuv_neon.c */,
 				BDCC9B9C1E42407800D914B4 /* yuv_sse2.c */,
+				FD027E4A20A8F859004634B2 /* yuv_sse41.c */,
 				BDCC9B981E42407800D914B4 /* yuv.c */,
+				BDCC9B5F1E42407700D914B4 /* common_sse2.h */,
+				FD027E4920A8F859004634B2 /* common_sse41.h */,
+				BDCC9B6D1E42407700D914B4 /* dsp.h */,
+				BDCC9B7D1E42407700D914B4 /* lossless_common.h */,
+				BDCC9B7C1E42407700D914B4 /* lossless.h */,
+				BDCC9B8A1E42407700D914B4 /* mips_macro.h */,
+				BDCC9B8B1E42407700D914B4 /* msa_macro.h */,
+				BDCC9B8C1E42407700D914B4 /* neon.h */,
 				BDCC9B991E42407800D914B4 /* yuv.h */,
 			);
 			path = dsp;
@@ -739,18 +739,15 @@
 		BDCC9B9D1E42407800D914B4 /* enc */ = {
 			isa = PBXGroup;
 			children = (
-				FD7547F4201E5A5E00A3D93D /* backward_references_cost_enc.c */,
 				BDCC9B9E1E42407800D914B4 /* alpha_enc.c */,
 				BDCC9B9F1E42407800D914B4 /* analysis_enc.c */,
+				FD7547F4201E5A5E00A3D93D /* backward_references_cost_enc.c */,
 				BDCC9BA01E42407800D914B4 /* backward_references_enc.c */,
-				BDCC9BA11E42407800D914B4 /* backward_references_enc.h */,
 				BDCC9BA21E42407800D914B4 /* config_enc.c */,
 				BDCC9BA31E42407800D914B4 /* cost_enc.c */,
-				BDCC9BA41E42407800D914B4 /* cost_enc.h */,
 				BDCC9BA71E42407800D914B4 /* filter_enc.c */,
 				BDCC9BA81E42407800D914B4 /* frame_enc.c */,
 				BDCC9BA91E42407800D914B4 /* histogram_enc.c */,
-				BDCC9BAA1E42407800D914B4 /* histogram_enc.h */,
 				BDCC9BAB1E42407800D914B4 /* iterator_enc.c */,
 				BDCC9BAD1E42407800D914B4 /* near_lossless_enc.c */,
 				BDCC9BAE1E42407800D914B4 /* picture_csp_enc.c */,
@@ -763,10 +760,13 @@
 				BDCC9BB51E42407800D914B4 /* syntax_enc.c */,
 				BDCC9BB61E42407800D914B4 /* token_enc.c */,
 				BDCC9BB71E42407800D914B4 /* tree_enc.c */,
-				BDCC9BB81E42407800D914B4 /* vp8i_enc.h */,
 				BDCC9BB91E42407800D914B4 /* vp8l_enc.c */,
-				BDCC9BBA1E42407800D914B4 /* vp8li_enc.h */,
 				BDCC9BBB1E42407800D914B4 /* webp_enc.c */,
+				BDCC9BA11E42407800D914B4 /* backward_references_enc.h */,
+				BDCC9BA41E42407800D914B4 /* cost_enc.h */,
+				BDCC9BAA1E42407800D914B4 /* histogram_enc.h */,
+				BDCC9BB81E42407800D914B4 /* vp8i_enc.h */,
+				BDCC9BBA1E42407800D914B4 /* vp8li_enc.h */,
 			);
 			path = enc;
 			sourceTree = "<group>";
@@ -775,11 +775,11 @@
 			isa = PBXGroup;
 			children = (
 				BDCC9BC21E42407800D914B4 /* anim_encode.c */,
-				BDCC9BC31E42407800D914B4 /* animi.h */,
 				BDCC9BC71E42407800D914B4 /* muxedit.c */,
-				BDCC9BC81E42407800D914B4 /* muxi.h */,
 				BDCC9BC91E42407800D914B4 /* muxinternal.c */,
 				BDCC9BCA1E42407800D914B4 /* muxread.c */,
+				BDCC9BC31E42407800D914B4 /* animi.h */,
+				BDCC9BC81E42407800D914B4 /* muxi.h */,
 			);
 			path = mux;
 			sourceTree = "<group>";
@@ -787,31 +787,31 @@
 		BDCC9BCB1E42407800D914B4 /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				BDCC9BCC1E42407800D914B4 /* bit_reader_inl_utils.h */,
 				BDCC9BCD1E42407800D914B4 /* bit_reader_utils.c */,
-				BDCC9BCE1E42407800D914B4 /* bit_reader_utils.h */,
 				BDCC9BCF1E42407800D914B4 /* bit_writer_utils.c */,
-				BDCC9BD01E42407800D914B4 /* bit_writer_utils.h */,
 				BDCC9BD11E42407800D914B4 /* color_cache_utils.c */,
+				BDCC9BD41E42407800D914B4 /* filters_utils.c */,
+				BDCC9BD61E42407800D914B4 /* huffman_encode_utils.c */,
+				BDCC9BD81E42407800D914B4 /* huffman_utils.c */,
+				BDCC9BDB1E42407800D914B4 /* quant_levels_dec_utils.c */,
+				BDCC9BDD1E42407800D914B4 /* quant_levels_utils.c */,
+				BDCC9BDF1E42407800D914B4 /* random_utils.c */,
+				BDCC9BE11E42407800D914B4 /* rescaler_utils.c */,
+				BDCC9BE31E42407800D914B4 /* thread_utils.c */,
+				BDCC9BE51E42407800D914B4 /* utils.c */,
+				BDCC9BCC1E42407800D914B4 /* bit_reader_inl_utils.h */,
+				BDCC9BCE1E42407800D914B4 /* bit_reader_utils.h */,
+				BDCC9BD01E42407800D914B4 /* bit_writer_utils.h */,
 				BDCC9BD21E42407800D914B4 /* color_cache_utils.h */,
 				BDCC9BD31E42407800D914B4 /* endian_inl_utils.h */,
-				BDCC9BD41E42407800D914B4 /* filters_utils.c */,
 				BDCC9BD51E42407800D914B4 /* filters_utils.h */,
-				BDCC9BD61E42407800D914B4 /* huffman_encode_utils.c */,
 				BDCC9BD71E42407800D914B4 /* huffman_encode_utils.h */,
-				BDCC9BD81E42407800D914B4 /* huffman_utils.c */,
 				BDCC9BD91E42407800D914B4 /* huffman_utils.h */,
-				BDCC9BDB1E42407800D914B4 /* quant_levels_dec_utils.c */,
 				BDCC9BDC1E42407800D914B4 /* quant_levels_dec_utils.h */,
-				BDCC9BDD1E42407800D914B4 /* quant_levels_utils.c */,
 				BDCC9BDE1E42407800D914B4 /* quant_levels_utils.h */,
-				BDCC9BDF1E42407800D914B4 /* random_utils.c */,
 				BDCC9BE01E42407800D914B4 /* random_utils.h */,
-				BDCC9BE11E42407800D914B4 /* rescaler_utils.c */,
 				BDCC9BE21E42407800D914B4 /* rescaler_utils.h */,
-				BDCC9BE31E42407800D914B4 /* thread_utils.c */,
 				BDCC9BE41E42407800D914B4 /* thread_utils.h */,
-				BDCC9BE51E42407800D914B4 /* utils.c */,
 				BDCC9BE61E42407800D914B4 /* utils.h */,
 			);
 			path = utils;
@@ -824,8 +824,8 @@
 				BDCC9BE91E42407800D914B4 /* demux.h */,
 				BDCC9BEA1E42407800D914B4 /* encode.h */,
 				BDCC9BEB1E42407800D914B4 /* format_constants.h */,
-				BDCC9BEC1E42407800D914B4 /* mux.h */,
 				BDCC9BED1E42407800D914B4 /* mux_types.h */,
+				BDCC9BEC1E42407800D914B4 /* mux.h */,
 				BDCC9BEE1E42407800D914B4 /* types.h */,
 			);
 			path = webp;
@@ -868,8 +868,8 @@
 			isa = PBXGroup;
 			children = (
 				D95E1BE11D88D63300F94976 /* Info.plist */,
-				BDFF4FBC1DC6611300739AA1 /* InternalRawRepresentable.swift */,
 				D95E1BE01D88D63300F94976 /* WebP.h */,
+				BDFF4FBC1DC6611300739AA1 /* InternalRawRepresentable.swift */,
 				BD196F931DB2845600F7387E /* WebPEncoder.swift */,
 				BD466CB01DBBFB3E00FFDD2E /* WebPEncoder+Platform.swift */,
 				BD196F951DB2848500F7387E /* WebPEncoderConfig.swift */,
