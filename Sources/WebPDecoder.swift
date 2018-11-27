@@ -58,7 +58,7 @@ class WebPDecoder {
         return cgImage
     }
 
-    static func decode(_ webPData: Data, checkStatus: Bool = false) -> CGSize {
+    static func decode(_ webPData: Data, checkStatus: Bool = false) -> (Int, Int) {
 
         let config: WebPDecoderConfig = webPData.withUnsafeBytes { (body: UnsafePointer<UInt8>) in
             var config = WebPDecoderConfig()
@@ -77,6 +77,6 @@ class WebPDecoder {
             return config
         }
 
-        return CGSize(width: Int(config.input.width), height: Int(config.input.height))
+        return (Int(config.input.width), Int(config.input.height))
     }
 }

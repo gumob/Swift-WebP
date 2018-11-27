@@ -286,6 +286,21 @@
 		A7467EC921AD14C90006696F /* WebPEncoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B12331E4768C100E04471 /* WebPEncoderTests.swift */; };
 		A7467ECA21AD15650006696F /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7467D6E21ACE97D0006696F /* WebP.framework */; };
 		A7467ECB21AD183C0006696F /* jiro.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD72CD271DD6F51D00E865AB /* jiro.jpg */; };
+		A7467ECD21AD1AA10006696F /* WebPDecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7467ECC21AD1AA10006696F /* WebPDecoderTests.swift */; };
+		A7467EDA21AD1C950006696F /* WebPDecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7467ECC21AD1AA10006696F /* WebPDecoderTests.swift */; };
+		A7467EDB21AD1C960006696F /* WebPDecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7467ECC21AD1AA10006696F /* WebPDecoderTests.swift */; };
+		A7467EDE21AD21520006696F /* jiro-vp8l.webp in Resources */ = {isa = PBXBuildFile; fileRef = A7467EDC21AD21520006696F /* jiro-vp8l.webp */; };
+		A7467EDF21AD21520006696F /* jiro-vp8l.webp in Resources */ = {isa = PBXBuildFile; fileRef = A7467EDC21AD21520006696F /* jiro-vp8l.webp */; };
+		A7467EE021AD21520006696F /* jiro-vp8l.webp in Resources */ = {isa = PBXBuildFile; fileRef = A7467EDC21AD21520006696F /* jiro-vp8l.webp */; };
+		A7467EE121AD21520006696F /* jiro-vp8.webp in Resources */ = {isa = PBXBuildFile; fileRef = A7467EDD21AD21520006696F /* jiro-vp8.webp */; };
+		A7467EE221AD21520006696F /* jiro-vp8.webp in Resources */ = {isa = PBXBuildFile; fileRef = A7467EDD21AD21520006696F /* jiro-vp8.webp */; };
+		A7467EE321AD21520006696F /* jiro-vp8.webp in Resources */ = {isa = PBXBuildFile; fileRef = A7467EDD21AD21520006696F /* jiro-vp8.webp */; };
+		A788B83221AD25DB000E22AC /* jiro-vp8-only-header.webp in Resources */ = {isa = PBXBuildFile; fileRef = A788B83021AD25DB000E22AC /* jiro-vp8-only-header.webp */; };
+		A788B83321AD25DB000E22AC /* jiro-vp8-only-header.webp in Resources */ = {isa = PBXBuildFile; fileRef = A788B83021AD25DB000E22AC /* jiro-vp8-only-header.webp */; };
+		A788B83421AD25DB000E22AC /* jiro-vp8-only-header.webp in Resources */ = {isa = PBXBuildFile; fileRef = A788B83021AD25DB000E22AC /* jiro-vp8-only-header.webp */; };
+		A788B83521AD25DB000E22AC /* jiro-vp8l-only-header.webp in Resources */ = {isa = PBXBuildFile; fileRef = A788B83121AD25DB000E22AC /* jiro-vp8l-only-header.webp */; };
+		A788B83621AD25DB000E22AC /* jiro-vp8l-only-header.webp in Resources */ = {isa = PBXBuildFile; fileRef = A788B83121AD25DB000E22AC /* jiro-vp8l-only-header.webp */; };
+		A788B83721AD25DB000E22AC /* jiro-vp8l-only-header.webp in Resources */ = {isa = PBXBuildFile; fileRef = A788B83121AD25DB000E22AC /* jiro-vp8l-only-header.webp */; };
 		BD3B123E1E47752800E04471 /* WebPEncoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B12331E4768C100E04471 /* WebPEncoderTests.swift */; };
 		BD3B123F1E47752E00E04471 /* WebPEncoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B12331E4768C100E04471 /* WebPEncoderTests.swift */; };
 		BD3B127C1E478B3300E04471 /* decode.h in Headers */ = {isa = PBXBuildFile; fileRef = BDCC9BE81E42407800D914B4 /* decode.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -679,6 +694,11 @@
 		A7467DA121ACE9C20006696F /* libwebp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libwebp.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7467EB421ACEF0F0006696F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		A7467EB721ACEF1C0006696F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		A7467ECC21AD1AA10006696F /* WebPDecoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPDecoderTests.swift; sourceTree = "<group>"; };
+		A7467EDC21AD21520006696F /* jiro-vp8l.webp */ = {isa = PBXFileReference; lastKnownFileType = file; name = "jiro-vp8l.webp"; path = "Resources/jiro-vp8l.webp"; sourceTree = "<group>"; };
+		A7467EDD21AD21520006696F /* jiro-vp8.webp */ = {isa = PBXFileReference; lastKnownFileType = file; name = "jiro-vp8.webp"; path = "Resources/jiro-vp8.webp"; sourceTree = "<group>"; };
+		A788B83021AD25DB000E22AC /* jiro-vp8-only-header.webp */ = {isa = PBXFileReference; lastKnownFileType = file; name = "jiro-vp8-only-header.webp"; path = "Resources/jiro-vp8-only-header.webp"; sourceTree = "<group>"; };
+		A788B83121AD25DB000E22AC /* jiro-vp8l-only-header.webp */ = {isa = PBXFileReference; lastKnownFileType = file; name = "jiro-vp8l-only-header.webp"; path = "Resources/jiro-vp8l-only-header.webp"; sourceTree = "<group>"; };
 		BD196F931DB2845600F7387E /* WebPEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebPEncoder.swift; sourceTree = "<group>"; };
 		BD196F951DB2848500F7387E /* WebPEncoderConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebPEncoderConfig.swift; sourceTree = "<group>"; };
 		BD196F991DB2989600F7387E /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
@@ -982,6 +1002,7 @@
 		BD3B12311E4768C100E04471 /* WebPTests */ = {
 			isa = PBXGroup;
 			children = (
+				A7467ECC21AD1AA10006696F /* WebPDecoderTests.swift */,
 				BD3B12331E4768C100E04471 /* WebPEncoderTests.swift */,
 			);
 			path = WebPTests;
@@ -1265,6 +1286,10 @@
 			children = (
 				BD3B12311E4768C100E04471 /* WebPTests */,
 				BD72CD271DD6F51D00E865AB /* jiro.jpg */,
+				A7467EDD21AD21520006696F /* jiro-vp8.webp */,
+				A788B83021AD25DB000E22AC /* jiro-vp8-only-header.webp */,
+				A7467EDC21AD21520006696F /* jiro-vp8l.webp */,
+				A788B83121AD25DB000E22AC /* jiro-vp8l-only-header.webp */,
 				D95E1BED1D88D63400F94976 /* Info.plist */,
 			);
 			path = Tests;
@@ -1667,6 +1692,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7467ECB21AD183C0006696F /* jiro.jpg in Resources */,
+				A7467EE221AD21520006696F /* jiro-vp8.webp in Resources */,
+				A788B83321AD25DB000E22AC /* jiro-vp8-only-header.webp in Resources */,
+				A7467EDF21AD21520006696F /* jiro-vp8l.webp in Resources */,
+				A788B83621AD25DB000E22AC /* jiro-vp8l-only-header.webp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1689,6 +1718,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD72CD3B1DD6FC3000E865AB /* jiro.jpg in Resources */,
+				A7467EE321AD21520006696F /* jiro-vp8.webp in Resources */,
+				A788B83421AD25DB000E22AC /* jiro-vp8-only-header.webp in Resources */,
+				A7467EE021AD21520006696F /* jiro-vp8l.webp in Resources */,
+				A788B83721AD25DB000E22AC /* jiro-vp8l-only-header.webp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1704,6 +1737,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD72CD291DD6F55200E865AB /* jiro.jpg in Resources */,
+				A7467EE121AD21520006696F /* jiro-vp8.webp in Resources */,
+				A788B83221AD25DB000E22AC /* jiro-vp8-only-header.webp in Resources */,
+				A7467EDE21AD21520006696F /* jiro-vp8l.webp in Resources */,
+				A788B83521AD25DB000E22AC /* jiro-vp8l-only-header.webp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1733,6 +1770,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7467EDA21AD1C950006696F /* WebPDecoderTests.swift in Sources */,
 				A7467EC921AD14C90006696F /* WebPEncoderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2015,6 +2053,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7467EDB21AD1C960006696F /* WebPDecoderTests.swift in Sources */,
 				BD3B123E1E47752800E04471 /* WebPEncoderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2284,6 +2323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7467ECD21AD1AA10006696F /* WebPDecoderTests.swift in Sources */,
 				BD3B123F1E47752E00E04471 /* WebPEncoderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
