@@ -29,7 +29,7 @@ class WebPDecoderTests: XCTestCase {
     func testVP8() {
         let url = Bundle(for: self.classForCoder).url(forResource: "jiro-vp8", withExtension: "webp")!
         let data = try! Data(contentsOf: url)
-        let size = WebPDecoder.decode(data, checkStatus: false)
+        let size = WebPDecoder.decode(data, checkStatus: true)
         XCTAssertEqual(size.0, 1210)
         XCTAssertEqual(size.1, 907)
     }
@@ -37,7 +37,7 @@ class WebPDecoderTests: XCTestCase {
     func testVP8L() {
         let url = Bundle(for: self.classForCoder).url(forResource: "jiro-vp8l", withExtension: "webp")!
         let data = try! Data(contentsOf: url)
-        let size = WebPDecoder.decode(data, checkStatus: false)
+        let size = WebPDecoder.decode(data, checkStatus: true)
         XCTAssertEqual(size.0, 1210)
         XCTAssertEqual(size.1, 907)
     }
