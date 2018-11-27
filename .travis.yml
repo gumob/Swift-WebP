@@ -6,10 +6,16 @@ env:
   - LANG=en_US.UTF-8
   - WORKSPACE="WebP.xcworkspace"
   - IOS_FRAMEWORK_SCHEME="WebP iOS"
+  - TVOS_FRAMEWORK_SCHEME="WebP tvOS"
+  - MACOS_FRAMEWORK_SCHEME="WebP macOS"
   - IOS_SDK=iphonesimulator12.0
+  - TVOS_SDK=appletvsimulator12.0
+  - MACOS_SDK=macosx10.14
   - EXAMPLE_SCHEME="iOS Example"
   matrix:
     - DESTINATION="OS=12.0,name=iPhone X" SCHEME="$IOS_FRAMEWORK_SCHEME" SDK="$IOS_SDK" POD_LINT="NO"
+    - DESTINATION="OS=12.1,name=Apple TV 4K" SCHEME="$TVOS_FRAMEWORK_SCHEME" SDK="$TVOS_SDK" POD_LINT="NO"
+    - DESTINATION="arch=x86_64" SCHEME="$MACOS_FRAMEWORK_SCHEME" SDK="$MACOS_SDK" POD_LINT="NO"
 script:
   - set -o pipefail
   - xcrun simctl list
@@ -25,7 +31,9 @@ script:
   - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration ReleaseTest ONLY_ACTIVE_ARCH=NO build | xcpretty
 
   # Build Example in Debug if specified
-  - xcodebuild -workspace "$WORKSPACE" -scheme "$EXAMPLE_SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty
+  - if [ "$SCHEME" == "$IOS_FRAMEWORK_SCHEME" ]; then
+    - xcodebuild -workspace "$WORKSPACE" -scheme "$EXAMPLE_SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty
+  fi
 
   # Run `pod lib lint` if specified
   - if [ $POD_LINT == "YES" ]; then
