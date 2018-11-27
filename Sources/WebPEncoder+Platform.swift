@@ -23,9 +23,9 @@ import Foundation
             return webPData
         }
     }
-#endif
 
-#if os(iOS)
+#else
+
     import UIKit
     import CoreGraphics
 

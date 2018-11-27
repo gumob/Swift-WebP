@@ -6,13 +6,16 @@
 //  Copyright © 2016年 satoshi.namai. All rights reserved.
 //
 
-#if os(macOS)
 import XCTest
 import Foundation
+#if os(macOS)
 import AppKit
+#else
+import UIKit
+#endif
 @testable import WebP
 
-class WebPEncoderMacOSTests: XCTestCase {
+class WebPEncoderTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -25,10 +28,13 @@ class WebPEncoderMacOSTests: XCTestCase {
 
     func testExample() {
         let path = Bundle(for: self.classForCoder).resourcePath!.appendingFormat("/jiro.jpg")
-        let nsimage = NSImage(contentsOfFile: path)!
+        #if os(macOS)
+        let image = NSImage(contentsOfFile: path)!
+        #else
+        let image = UIImage(contentsOfFile: path)!
+        #endif
         let encoder = WebPEncoder()
-        let webPImage = try! encoder.encode(nsimage, config: .preset(.photo, quality: 10))
+        let webPImage = try! encoder.encode(image, config: .preset(.photo, quality: 10))
         XCTAssertNotNil(webPImage)
     }
 }
-#endif
