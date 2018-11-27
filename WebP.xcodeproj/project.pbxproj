@@ -540,6 +540,10 @@
 		BDCC9FC81E4246FD00D914B4 /* types.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BDCC9BEE1E42407800D914B4 /* types.h */; };
 		BDFF4FBF1DC661AA00739AA1 /* InternalRawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFF4FBC1DC6611300739AA1 /* InternalRawRepresentable.swift */; };
 		D95E1BE71D88D63400F94976 /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95E1BDD1D88D63300F94976 /* WebP.framework */; };
+		DFABE198C134A5B79E375282 /* WebPDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFABE94F9146D505D94666CC /* WebPDecoder.swift */; };
+		DFABE5C2DE76E092FCD42F51 /* WebPDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFABE94F9146D505D94666CC /* WebPDecoder.swift */; };
+		DFABE71813B9FA1A43279903 /* WebPDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFABE94F9146D505D94666CC /* WebPDecoder.swift */; };
+		DFABE9F50C03609FC4C6F996 /* WebPDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFABE94F9146D505D94666CC /* WebPDecoder.swift */; };
 		FD027E4C20A8F859004634B2 /* common_sse41.h in Headers */ = {isa = PBXBuildFile; fileRef = FD027E4920A8F859004634B2 /* common_sse41.h */; };
 		FD027E4D20A8F859004634B2 /* yuv_sse41.c in Sources */ = {isa = PBXBuildFile; fileRef = FD027E4A20A8F859004634B2 /* yuv_sse41.c */; };
 		FD027E4E20A8F859004634B2 /* upsampling_sse41.c in Sources */ = {isa = PBXBuildFile; fileRef = FD027E4B20A8F859004634B2 /* upsampling_sse41.c */; };
@@ -844,6 +848,7 @@
 		D95E1BE61D88D63400F94976 /* WebPTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WebPTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D95E1BED1D88D63400F94976 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D95E1BFA1D88E2D500F94976 /* WebPSimple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebPSimple.swift; sourceTree = "<group>"; };
+		DFABE94F9146D505D94666CC /* WebPDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebPDecoder.swift; sourceTree = "<group>"; };
 		FD027E4920A8F859004634B2 /* common_sse41.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common_sse41.h; sourceTree = "<group>"; };
 		FD027E4A20A8F859004634B2 /* yuv_sse41.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yuv_sse41.c; sourceTree = "<group>"; };
 		FD027E4B20A8F859004634B2 /* upsampling_sse41.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = upsampling_sse41.c; sourceTree = "<group>"; };
@@ -1245,11 +1250,12 @@
 			children = (
 				D95E1BE11D88D63300F94976 /* Info.plist */,
 				D95E1BE01D88D63300F94976 /* WebP.h */,
-				BDFF4FBC1DC6611300739AA1 /* InternalRawRepresentable.swift */,
+				DFABE94F9146D505D94666CC /* WebPDecoder.swift */,
 				BD196F931DB2845600F7387E /* WebPEncoder.swift */,
 				BD466CB01DBBFB3E00FFDD2E /* WebPEncoder+Platform.swift */,
 				BD196F951DB2848500F7387E /* WebPEncoderConfig.swift */,
 				D95E1BFA1D88E2D500F94976 /* WebPSimple.swift */,
+				BDFF4FBC1DC6611300739AA1 /* InternalRawRepresentable.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -1718,6 +1724,7 @@
 				A7467DB021ACEA100006696F /* WebPEncoderConfig.swift in Sources */,
 				A7467DAD21ACEA100006696F /* InternalRawRepresentable.swift in Sources */,
 				A7467EC521ACEF990006696F /* upsampling_sse41.c in Sources */,
+				DFABE9F50C03609FC4C6F996 /* WebPDecoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1743,6 +1750,7 @@
 				A7467DAB21ACEA0F0006696F /* WebPEncoderConfig.swift in Sources */,
 				A7467DA821ACEA0F0006696F /* InternalRawRepresentable.swift in Sources */,
 				A7467EC621ACEF990006696F /* upsampling_sse41.c in Sources */,
+				DFABE198C134A5B79E375282 /* WebPDecoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1997,6 +2005,7 @@
 				BD5FC4D91DB3EE36000A0A38 /* WebPEncoderConfig.swift in Sources */,
 				BDFF4FBF1DC661AA00739AA1 /* InternalRawRepresentable.swift in Sources */,
 				BD5FC4DA1DB3EE36000A0A38 /* WebPEncoder.swift in Sources */,
+				DFABE71813B9FA1A43279903 /* WebPDecoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2265,6 +2274,7 @@
 				FD027E4D20A8F859004634B2 /* yuv_sse41.c in Sources */,
 				FD7547F2201E5A4300A3D93D /* yuv_neon.c in Sources */,
 				FD027E4E20A8F859004634B2 /* upsampling_sse41.c in Sources */,
+				DFABE5C2DE76E092FCD42F51 /* WebPDecoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
