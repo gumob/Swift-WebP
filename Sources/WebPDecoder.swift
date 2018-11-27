@@ -7,14 +7,6 @@ import Foundation
 import CoreGraphics
 import CWebP
 
-private func webp_freeWebPData(info: UnsafeMutableRawPointer?, data: UnsafeRawPointer, size: Int) -> Void {
-    if let info = info {
-        var config = info.assumingMemoryBound(to: CWebP.WebPDecoderConfig.self).pointee
-        WebPFreeDecBuffer(&config.output)
-    }
-    free(UnsafeMutableRawPointer(mutating: data))
-}
-
 class WebPDecoder {
 
     public static func decode(_ webPData: Data) throws -> CGImage {
