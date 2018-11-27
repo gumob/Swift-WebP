@@ -50,7 +50,7 @@ public struct WebPDecoder {
 //        return cgImage
 //    }
 
-    static func decode(_ webPData: Data, checkStatus: Bool = false) -> (Int, Int) {
+    public static func decode(_ webPData: Data, checkStatus: Bool = false) -> (Int, Int) {
 
         let config: WebPDecoderConfig = webPData.withUnsafeBytes { (body: UnsafePointer<UInt8>) in
             var config = WebPDecoderConfig()
