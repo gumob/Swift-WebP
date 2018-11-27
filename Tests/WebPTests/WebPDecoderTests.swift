@@ -43,14 +43,14 @@ class WebPDecoderTests: XCTestCase {
     func testVP8Header() {
         let url = Bundle(for: self.classForCoder).url(forResource: "jiro-vp8-only-header", withExtension: "webp")!
         let data = try! Data(contentsOf: url)
-        let size = try! WebPDecoder.decode(data, checkStatus: true)
+        let size = try! WebPDecoder.decode(data, checkStatus: false)
         XCTAssertEqual(size, CGSize(width: 1210, height: 907))
     }
 
     func testVP8LHeader() {
         let url = Bundle(for: self.classForCoder).url(forResource: "jiro-vp8l-only-header", withExtension: "webp")!
         let data = try! Data(contentsOf: url)
-        let size = try! WebPDecoder.decode(data, checkStatus: true)
+        let size = try! WebPDecoder.decode(data, checkStatus: false)
         XCTAssertEqual(size, CGSize(width: 1210, height: 907))
     }
 
