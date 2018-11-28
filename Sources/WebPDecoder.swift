@@ -16,69 +16,49 @@ enum WebPDecodeError: Int, Error {
 
 public struct WebPDecoder {
 
-    public static func decode(_ webPData: Data) throws -> CGImage {
-        var config: CWebP.WebPDecoderConfig = try webPData.withUnsafeBytes { (body: UnsafePointer<UInt8>) in
-            var config = CWebP.WebPDecoderConfig()
-            if WebPInitDecoderConfig(&config) == 0 {
-                throw WebPDecodeError.configFailure
-            }
-
-            var features = CWebP.WebPBitstreamFeatures()
-            if WebPGetFeatures(body, webPData.count, &features) != VP8_STATUS_OK {
-                throw WebPDecodeError.brokenHeader
-            }
-
-            config.output.colorspace = MODE_RGBA
-
-            if WebPDecode(body, webPData.count, &config) != VP8_STATUS_OK {
-                throw WebPDecodeError.decodeFailure
-            }
-            return config
-        }
-
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let provider = CGDataProvider(dataInfo: &config,
-                                      data: config.output.u.RGBA.rgba,
-                                      size: (Int(config.input.width) * Int(config.input.height) * 4),
-                                      releaseData: webp_freeWebPData)!
-        let cgImage = CGImage(
-                width: Int(config.input.width),
-                height: Int(config.input.height),
-                bitsPerComponent: 8,
-                bitsPerPixel: 32,
-                bytesPerRow: Int(config.output.u.RGBA.stride),
-                space: colorSpace,
-                bitmapInfo: CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue),
-                provider: provider,
-                decode: nil,
-                shouldInterpolate: false,
-                intent: CGColorRenderingIntent.defaultIntent)!
-
-        return cgImage
-    }
+//    public static func decode(_ webPData: Data, checkStatus: Bool = false) throws -> CGSize {
+//
+//        var config: WebPDecoderConfig = try webPData.withUnsafeBytes { (body: UnsafePointer<UInt8>) in
+//            var config = WebPDecoderConfig()
+//            if WebPInitDecoderConfig(&config) == 0 {
+//                throw WebPDecodeError.configFailure
+//            }
+//            defer {
+//            }
+//
+//            var features = WebPBitstreamFeatures()
+//            if WebPGetFeatures(body, webPData.count, &features) != VP8_STATUS_OK && checkStatus {
+//                throw WebPDecodeError.brokenHeader
+//            }
+//
+//            config.output.colorspace = MODE_RGBA
+//
+//            if WebPDecode(body, webPData.count, &config) != VP8_STATUS_OK && checkStatus {
+//                throw WebPDecodeError.decodeFailure
+//            }
+//
+//            return config
+//        }
+//
+//        let size: CGSize = CGSize(width: Int(config.input.width), height: Int(config.input.height))
+//        WebPFreeDecBuffer(&config.output)
+//        return size
+//    }
 
     public static func decode(_ webPData: Data, checkStatus: Bool = false) throws -> CGSize {
-
-        let config: WebPDecoderConfig = try webPData.withUnsafeBytes { (body: UnsafePointer<UInt8>) in
-            var config = WebPDecoderConfig()
-            if WebPInitDecoderConfig(&config) == 0 {
-                throw WebPDecodeError.configFailure
-            }
-
-            var features = WebPBitstreamFeatures()
-            if WebPGetFeatures(body, webPData.count, &features) != VP8_STATUS_OK && checkStatus {
-                throw WebPDecodeError.brokenHeader
-            }
-
-            config.output.colorspace = MODE_RGBA
-
-            if WebPDecode(body, webPData.count, &config) != VP8_STATUS_OK && checkStatus {
-                throw WebPDecodeError.decodeFailure
-            }
-
-            return config
+        var width: CInt = 0
+        var height: CInt = 0
+        if webPInfo(data: webPData as NSData, width: &width, height: &height) != true && checkStatus {
+            throw WebPDecodeError.decodeFailure
         }
+        return CGSize(width: Int(width), height: Int(height))
+    }
 
-        return CGSize(width: Int(config.input.width), height: Int(config.input.height))
+    static private func webPInfo(data: NSData, width: inout CInt, height: inout CInt) -> Bool {
+        let statusOk = Int32(1)
+        if (WebPGetInfo(data.bytes.assumingMemoryBound(to: UInt8.self), data.length, &width, &height) == statusOk) {
+            return true
+        }
+        return false
     }
 }
