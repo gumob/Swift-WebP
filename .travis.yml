@@ -34,16 +34,13 @@ script:
 
   # Build and test Framework in Debug
   - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO test | xcpretty
-#  - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO test | xcpretty
 
   # Build Framework in ReleaseTest
   - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration ReleaseTest ONLY_ACTIVE_ARCH=NO build | xcpretty
-#  - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "$DESTINATION" -configuration ReleaseTest ONLY_ACTIVE_ARCH=NO build | xcpretty
 
   # Build Example in Debug if specified
   - if [ $BUILD_EXAMPLE == "YES" ]; then
     xcodebuild -workspace "$WORKSPACE" -scheme "$EXAMPLE_SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty;
-#    xcodebuild -workspace "$WORKSPACE" -scheme "$EXAMPLE_SCHEME" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty;
     fi
 
   # Run `pod lib lint` if specified
