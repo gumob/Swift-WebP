@@ -54,9 +54,13 @@ public struct WebPDecoder {
         return CGSize(width: Int(width), height: Int(height))
     }
 
-    static private func webPInfo(data: NSData, width: inout CInt, height: inout CInt) -> Bool {
+    static private func webPInfo(webPdata: NSData, width: inout CInt, height: inout CInt) -> Bool {
         let statusOk = Int32(1)
-        if (WebPGetInfo(data.bytes.assumingMemoryBound(to: UInt8.self), data.length, &width, &height) == statusOk) {
+        var data: UnsafePointer<UInt8> = webPdata.bytes.assumingMemoryBound(to: UInt8.self)
+        defer {
+            data.deallocate()
+        }
+        if (WebPGetInfo(data, webPdata.length, &width, &height) == statusOk) {
             return true
         }
         return false
