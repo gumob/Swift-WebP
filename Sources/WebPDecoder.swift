@@ -45,23 +45,43 @@ public struct WebPDecoder {
 //        return size
 //    }
 
+//    public static func decode(_ webPData: Data) throws -> CGSize {
+//        var width: CInt = 0
+//        var height: CInt = 0
+//        webPData.withUnsafeBytes { (bytesPointer: UnsafePointer<UInt8>) -> Void in
+//            WebPGetInfo(bytesPointer, webPData.count, &width, &height)
+//        }
+//        return CGSize(width: Int(width), height: Int(height))
+//    }
+
     public static func decode(_ webPData: Data, checkStatus: Bool = false) throws -> CGSize {
+        var status: Int32 = 0
         var width: CInt = 0
         var height: CInt = 0
-        if webPInfo(webPdata: webPData as NSData, width: &width, height: &height) != true && checkStatus {
-            throw WebPDecodeError.decodeFailure
+        webPData.withUnsafeBytes { (bytesPointer: UnsafePointer<UInt8>) -> Void in
+            status = WebPGetInfo(bytesPointer, webPData.count, &width, &height)
         }
+        if status == 0 && checkStatus { throw WebPDecodeError.decodeFailure }
         return CGSize(width: Int(width), height: Int(height))
     }
 
-    static private func webPInfo(webPdata: NSData, width: inout CInt, height: inout CInt) -> Bool {
-        let statusOk = Int32(1)
-        let bytes: UnsafePointer<UInt8> = webPdata.bytes.assumingMemoryBound(to: UInt8.self)
-        if (WebPGetInfo(bytes, webPdata.length, &width, &height) == statusOk) {
-            return true
-        }
-        return false
-    }
+//    public static func decode(_ webPData: Data, checkStatus: Bool = false) throws -> CGSize {
+//        var width: CInt = 0
+//        var height: CInt = 0
+//        if webPInfo(webPdata: webPData as NSData, width: &width, height: &height) != true && checkStatus {
+//            throw WebPDecodeError.decodeFailure
+//        }
+//        return CGSize(width: Int(width), height: Int(height))
+//    }
+//
+//    static private func webPInfo(webPdata: NSData, width: inout CInt, height: inout CInt) -> Bool {
+//        let statusOk = Int32(1)
+//        let bytes: UnsafePointer<UInt8> = webPdata.bytes.assumingMemoryBound(to: UInt8.self)
+//        if (WebPGetInfo(bytes, webPdata.length, &width, &height) == statusOk) {
+//            return true
+//        }
+//        return false
+//    }
 
 //    public static func decode(_ webPData: Data, checkStatus: Bool = false) throws -> CGSize {
 //        var width: CInt = 0
