@@ -48,18 +48,36 @@ public struct WebPDecoder {
     public static func decode(_ webPData: Data, checkStatus: Bool = false) throws -> CGSize {
         var width: CInt = 0
         var height: CInt = 0
-        if webPInfo(webPdata: webPData, width: &width, height: &height) != true && checkStatus {
+        if webPInfo(webPdata: webPData as NSData, width: &width, height: &height) != true && checkStatus {
             throw WebPDecodeError.decodeFailure
         }
         return CGSize(width: Int(width), height: Int(height))
     }
 
-    static private func webPInfo(webPdata: Data, width: inout CInt, height: inout CInt) -> Bool {
+    static private func webPInfo(webPdata: NSData, width: inout CInt, height: inout CInt) -> Bool {
         let statusOk = Int32(1)
-        let bytes: UnsafeMutablePointer<UInt8> = webPdata.copyAllBytes()
-        if (WebPGetInfo(bytes, webPdata.count, &width, &height) == statusOk) {
+        let bytes: UnsafePointer<UInt8> = webPdata.bytes.assumingMemoryBound(to: UInt8.self)
+        if (WebPGetInfo(bytes, webPdata.length, &width, &height) == statusOk) {
             return true
         }
         return false
     }
+
+//    public static func decode(_ webPData: Data, checkStatus: Bool = false) throws -> CGSize {
+//        var width: CInt = 0
+//        var height: CInt = 0
+//        if webPInfo(webPdata: webPData, width: &width, height: &height) != true && checkStatus {
+//            throw WebPDecodeError.decodeFailure
+//        }
+//        return CGSize(width: Int(width), height: Int(height))
+//    }
+//
+//    static private func webPInfo(webPdata: Data, width: inout CInt, height: inout CInt) -> Bool {
+//        let statusOk = Int32(1)
+//        let bytes: UnsafeMutablePointer<UInt8> = webPdata.copyAllBytes()
+//        if (WebPGetInfo(bytes, webPdata.count, &width, &height) == statusOk) {
+//            return true
+//        }
+//        return false
+//    }
 }
